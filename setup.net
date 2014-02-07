@@ -1,0 +1,5 @@
+[TELE]
+TELEDIR=.\tele
+USERSDIR=.\
+TELEAPI=* mkc 20
+DefaultUser=tov2soap

@@ -1,0 +1,35 @@
+[Server]
+HostName=10.10.1.108
+UserName=sa
+PassWord=r_way
+#Database=mkc
+
+[ARM]
+#ID_Arm = 1
+
+MsgPath=G:\S4624\Send\
+#MsgPath=D:\1\
+MsgReturnPath = G:\S4624\Receive\
+BadMsgPath =  G:\S4624\Bad\
+MessageCodePage = DOS
+
+DefUserName = Плохов
+DefUserPass = 63
+SilentCancel = Yes
+DisableTelecom = 1
+Show4624Header = 1
+#NoPPT = 1
+NoHideRemVag4624 = 1
+MessageCodePage = DOS
+
+
+[LOOK]
+MenuLook = XP
+
+
+[DEBUG]
+NewEmployeeDlg = yes
+EnableSqlLog = yes
+#DisableAuth = yes
+#StandAlone=0
+

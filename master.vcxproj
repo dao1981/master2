@@ -1,0 +1,507 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Template|Win32">
+      <Configuration>Template</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="wn64|Win32">
+      <Configuration>wn64</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{C7ACC39A-73F7-4C3E-B7C8-63AF7A1FC628}</ProjectGuid>
+    <RootNamespace>master</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='wn64|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>Static</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>Static</UseOfMfc>
+    <UseOfAtl>false</UseOfAtl>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='wn64|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC70.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC70.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\Debug\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\Release\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Template|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Template|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='wn64|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='wn64|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='wn64|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\Debug/master.tlb</TypeLibraryName>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;WINVER=0x0410;_WIN32_WINDOWS=0x0410;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>.\Debug/master.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
+      <ObjectFileName>.\Debug/</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug/</ProgramDataBaseFileName>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0419</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalOptions>/MACHINE:I386 %(AdditionalOptions)</AdditionalOptions>
+      <OutputFile>.\Debug/master.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>.\Debug/master.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\Release/master.tlb</TypeLibraryName>
+    </Midl>
+    <ClCompile>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;WINVER=0x0410;_WIN32_WINDOWS=0x0410;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>.\Release/master.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\Release/</AssemblerListingLocation>
+      <ObjectFileName>.\Release/</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release/</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0419</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalOptions>/MACHINE:I386 %(AdditionalOptions)</AdditionalOptions>
+      <OutputFile>.\Release/master.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <ProgramDatabaseFile>.\Release/master.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="AddFacelessVag.cpp" />
+    <ClCompile Include="AuthDlg.cpp" />
+    <ClCompile Include="ColoredButton.cpp" />
+    <ClCompile Include="DBWire.cpp" />
+    <ClCompile Include="DialogHeader.cpp" />
+    <ClCompile Include="DlgAccel1.cpp" />
+    <ClCompile Include="DlgAddKpSmall.cpp" />
+    <ClCompile Include="DlgAddPeres.cpp" />
+    <ClCompile Include="DlgAddPr.cpp" />
+    <ClCompile Include="DlgAddRemVag.cpp" />
+    <ClCompile Include="DlgAddVansToRem.cpp" />
+    <ClCompile Include="DlgASNeispKp.cpp" />
+    <ClCompile Include="DlgAuth1.cpp" />
+    <ClCompile Include="DlgBD_TL.cpp" />
+    <ClCompile Include="DlgBD_TL1069.cpp" />
+    <ClCompile Include="DlgBDSelectRez.cpp" />
+    <ClCompile Include="DlgBDSelectRezDTL.cpp" />
+    <ClCompile Include="DlgBDSelectRezTL.cpp" />
+    <ClCompile Include="DlgBDTl2.cpp" />
+    <ClCompile Include="DlgChangeTypeKP.cpp" />
+    <ClCompile Include="DlgConnectServ.cpp" />
+    <ClCompile Include="DlgCreateAdm.cpp" />
+    <ClCompile Include="DlgCreateIni.cpp" />
+    <ClCompile Include="DlgDBKPSelect.cpp" />
+    <ClCompile Include="DlgDBOsSelect.cpp" />
+    <ClCompile Include="DlgDBRemSelect.cpp" />
+    <ClCompile Include="DlgDepSelect.cpp" />
+    <ClCompile Include="DlgDisplRP.cpp" />
+    <ClCompile Include="DlgEditDepo.cpp" />
+    <ClCompile Include="DlgEditEmployee.cpp" />
+    <ClCompile Include="DlgEditKP.cpp" />
+    <ClCompile Include="DlgEditPass.cpp" />
+    <ClCompile Include="DlgEdRsn.cpp" />
+    <ClCompile Include="DlgGetDate4624Log.cpp" />
+    <ClCompile Include="DlgInput2955.cpp" />
+    <ClCompile Include="DlgInput2955Rpt.cpp" />
+    <ClCompile Include="DlgInput2956.cpp" />
+    <ClCompile Include="DlgInput2956Svod.cpp" />
+    <ClCompile Include="DlgInput2957.cpp" />
+    <ClCompile Include="DlgInput2958.cpp" />
+    <ClCompile Include="DlgInputRptPostKpXls.cpp" />
+    <ClCompile Include="DlgInput_VO7.cpp" />
+    <ClCompile Include="DlgInputDate.cpp" />
+    <ClCompile Include="DlgInputNTL1067.cpp" />
+    <ClCompile Include="DlgInputNVag.cpp" />
+    <ClCompile Include="DlgInputObezlVag.cpp" />
+    <ClCompile Include="DlgInputRpt2950.cpp" />
+    <ClCompile Include="DlgInputRpt2956.cpp" />
+    <ClCompile Include="DlgInputRptPodakat.cpp" />
+    <ClCompile Include="DlgInputRptPrihodTL.cpp" />
+    <ClCompile Include="DlgInputTrafVag.cpp" />
+    <ClCompile Include="DlgKpHisoryInp.cpp" />
+    <ClCompile Include="DlgKpVvod1.cpp" />
+    <ClCompile Include="DlgListVCHD.cpp" />
+    <ClCompile Include="DlgMakeLK.cpp" />
+    <ClCompile Include="DlgMakeLK_KPOrder.cpp" />
+    <ClCompile Include="DlgMakeLK_Send.cpp" />
+    <ClCompile Include="DlgMntBuks.cpp" />
+    <ClCompile Include="DlgMsg2955.cpp" />
+    <ClCompile Include="DlgMsg2956.cpp" />
+    <ClCompile Include="DlgMsg2957_1.cpp" />
+    <ClCompile Include="DlgMsg2957_2.cpp" />
+    <ClCompile Include="DlgMsg2957Main.cpp" />
+    <ClCompile Include="DlgMsg2958.cpp" />
+    <ClCompile Include="DlgMsg4624_BlTl.cpp" />
+    <ClCompile Include="DlgMsg4624_Header.cpp" />
+    <ClCompile Include="DlgMsg4624_KP.cpp" />
+    <ClCompile Include="DlgMsg4624_LDTL.cpp" />
+    <ClCompile Include="DlgMsg4624_Main.cpp" />
+    <ClCompile Include="DlgMsg4624_TLVAG.cpp" />
+    <ClCompile Include="DlgMsg4624_VagDateInput.cpp" />
+    <ClCompile Include="DlgMsg4624_ZamenaBlTl.cpp" />
+    <ClCompile Include="DlgMsg4624_ZamenaKP.cpp" />
+    <ClCompile Include="DlgMsg4624_ZamenaLDTL.cpp" />
+    <ClCompile Include="DlgMsg4624Log.cpp" />
+    <ClCompile Include="DlgNaryadNaVag.cpp" />
+    <ClCompile Include="DlgObmerKP.cpp" />
+    <ClCompile Include="DlgOldKPList.cpp" />
+    <ClCompile Include="DlgPaspKP.cpp" />
+    <ClCompile Include="DlgPeresKP.cpp" />
+    <ClCompile Include="DlgPeresTL_AddDTL.cpp" />
+    <ClCompile Include="DlgPeresTlAddPeres.cpp" />
+    <ClCompile Include="DlgPeresTlLog.cpp" />
+    <ClCompile Include="DlgPerestRept.cpp" />
+    <ClCompile Include="DlgPodkat1069.cpp" />
+    <ClCompile Include="DlgPodkatTL1520.cpp" />
+    <ClCompile Include="DlgPPT_BDVagRez.cpp" />
+    <ClCompile Include="DlgPPT_EditVag.cpp" />
+    <ClCompile Include="DlgPPT_InpBDVag.cpp" />
+    <ClCompile Include="DlgPPTSendToRem.cpp" />
+    <ClCompile Include="DlgPrihKpList.cpp" />
+    <ClCompile Include="DlgPrihodKP.cpp" />
+    <ClCompile Include="DlgPrihodOS.cpp" />
+    <ClCompile Include="DlgPrihodTL.cpp" />
+    <ClCompile Include="DlgPrihodTL2.cpp" />
+    <ClCompile Include="DlgPrObtIn.cpp" />
+    <ClCompile Include="DlgProkatTL1069.cpp" />
+    <ClCompile Include="DlgRashod.cpp" />
+    <ClCompile Include="DlgRashodTl.cpp" />
+    <ClCompile Include="DlgRashodTl_Main.cpp" />
+    <ClCompile Include="DlgRaspressKP.cpp" />
+    <ClCompile Include="DlgRaspressovka.cpp" />
+    <ClCompile Include="DlgRazmGroup.cpp" />
+    <ClCompile Include="DlgRegisterTL.cpp" />
+    <ClCompile Include="DlgRemDefektBR.cpp" />
+    <ClCompile Include="DlgremDefektNB.cpp" />
+    <ClCompile Include="DlgRemDefektSB.cpp" />
+    <ClCompile Include="DlgRemKP.cpp" />
+    <ClCompile Include="DlgRemVag.cpp" />
+    <ClCompile Include="DlgReq2730ListVag.cpp" />
+    <ClCompile Include="DlgRptInputZhurnKompl.cpp" />
+    <ClCompile Include="DlgRptVU36M.cpp" />
+    <ClCompile Include="DlgRptVU53.cpp" />
+    <ClCompile Include="DlgRptVU54.cpp" />
+    <ClCompile Include="DlgRptVU90.cpp" />
+    <ClCompile Include="DlgSelectOS.cpp" />
+    <ClCompile Include="DlgSelKPType.cpp" />
+    <ClCompile Include="DlgSelRP.cpp" />
+    <ClCompile Include="DlgSelZapress.cpp" />
+    <ClCompile Include="DlgSetupCommon.cpp" />
+    <ClCompile Include="DlgSetupTO.cpp" />
+    <ClCompile Include="DlgSetupUserMenuItems.cpp" />
+    <ClCompile Include="DlgShowTOVKadr.cpp" />
+    <ClCompile Include="DlgShowTwin.cpp" />
+    <ClCompile Include="DlgSotrEd.cpp" />
+    <ClCompile Include="DlgSprav1.cpp" />
+    <ClCompile Include="DlgSpravDor.cpp" />
+    <ClCompile Include="DlgSpravKdr.cpp" />
+    <ClCompile Include="DlgSpravSmp.cpp" />
+    <ClCompile Include="DlgSpravTKP.cpp" />
+    <ClCompile Include="DlgSprPrSobstv.cpp" />
+    <ClCompile Include="DlgSprPrSobstvAdd.cpp" />
+    <ClCompile Include="DlgTLFromVag.cpp" />
+    <ClCompile Include="DlgVagNumTrafaret.cpp" />
+    <ClCompile Include="DlgVagOn1067.cpp" />
+    <ClCompile Include="DlgVagOn1067Edit.cpp" />
+    <ClCompile Include="DlgVvodRP.cpp" />
+    <ClCompile Include="DlgWheelsToVan.cpp" />
+    <ClCompile Include="DlgZapressKP.cpp" />
+    <ClCompile Include="DlgZapressLog.cpp" />
+    <ClCompile Include="EmplArray.cpp" />
+    <ClCompile Include="ErrorDisplay.cpp" />
+    <ClCompile Include="FastGrid.cpp" />
+    <ClCompile Include="InputNVagObezl4624.cpp" />
+    <ClCompile Include="ListEx.cpp" />
+    <ClCompile Include="m_EdInputVO2.cpp" />
+    <ClCompile Include="MainForm.cpp" />
+    <ClCompile Include="MainFrm.cpp" />
+    <ClCompile Include="MaskEdit.cpp" />
+    <ClCompile Include="master.cpp" />
+    <ClCompile Include="Msg4624Dispatcher.cpp" />
+    <ClCompile Include="Controls\MyLabel.cpp" />
+    <ClCompile Include="NewMenu.cpp" />
+    <ClCompile Include="PrintableDlg.cpp" />
+    <ClCompile Include="PrinterSelectDlg.cpp" />
+    <ClCompile Include="StdAfx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="TheEdit.cpp" />
+    <ClCompile Include="ViewPrintPreview.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="master.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AddFacelessVag.h" />
+    <ClInclude Include="AuthDlg.h" />
+    <ClInclude Include="ColoredButton.h" />
+    <ClInclude Include="DBWire.h" />
+    <ClInclude Include="DialogHeader.h" />
+    <ClInclude Include="DlgAccel1.h" />
+    <ClInclude Include="DlgAddKpSmall.h" />
+    <ClInclude Include="DlgAddPeres.h" />
+    <ClInclude Include="DlgAddPr.h" />
+    <ClInclude Include="DlgAddRemVag.h" />
+    <ClInclude Include="DlgAddVansToRem.h" />
+    <ClInclude Include="DlgASNeispKp.h" />
+    <ClInclude Include="DlgAuth1.h" />
+    <ClInclude Include="DlgBD_TL.h" />
+    <ClInclude Include="DlgBD_TL1069.h" />
+    <ClInclude Include="DlgBDSelectRez.h" />
+    <ClInclude Include="DlgBDSelectRezDTL.h" />
+    <ClInclude Include="DlgBDSelectRezTL.h" />
+    <ClInclude Include="DlgBDTl2.h" />
+    <ClInclude Include="DlgChangeTypeKP.h" />
+    <ClInclude Include="DlgConnectServ.h" />
+    <ClInclude Include="DlgCreateAdm.h" />
+    <ClInclude Include="DlgCreateIni.h" />
+    <ClInclude Include="DlgDBKPSelect.h" />
+    <ClInclude Include="DlgDBOsSelect.h" />
+    <ClInclude Include="DlgDBRemSelect.h" />
+    <ClInclude Include="DlgDepSelect.h" />
+    <ClInclude Include="DlgDisplRP.h" />
+    <ClInclude Include="DlgEditDepo.h" />
+    <ClInclude Include="DlgEditEmployee.h" />
+    <ClInclude Include="DlgEditKP.h" />
+    <ClInclude Include="DlgEditPass.h" />
+    <ClInclude Include="DlgEdRsn.h" />
+    <ClInclude Include="DlgGetDate4624Log.h" />
+    <ClInclude Include="DlgInput2955.h" />
+    <ClInclude Include="DlgInput2955Rpt.h" />
+    <ClInclude Include="DlgInput2956.h" />
+    <ClInclude Include="DlgInput2956Svod.h" />
+    <ClInclude Include="DlgInput2957.h" />
+    <ClInclude Include="DlgInput2958.h" />
+    <ClInclude Include="DlgInputRptPostKpXls.h" />
+    <ClInclude Include="DlgInput_VO7.h" />
+    <ClInclude Include="DlgInputDate.h" />
+    <ClInclude Include="DlgInputNTL1067.h" />
+    <ClInclude Include="DlgInputNVag.h" />
+    <ClInclude Include="DlgInputObezlVag.h" />
+    <ClInclude Include="DlgInputRpt2950.h" />
+    <ClInclude Include="DlgInputRpt2956.h" />
+    <ClInclude Include="DlgInputRptPodakat.h" />
+    <ClInclude Include="DlgInputRptPrihodTL.h" />
+    <ClInclude Include="DlgInputTrafVag.h" />
+    <ClInclude Include="DlgKpHisoryInp.h" />
+    <ClInclude Include="DlgKpVvod1.h" />
+    <ClInclude Include="DlgListVCHD.h" />
+    <ClInclude Include="DlgMakeLK.h" />
+    <ClInclude Include="DlgMakeLK_KPOrder.h" />
+    <ClInclude Include="DlgMakeLK_Send.h" />
+    <ClInclude Include="DlgMntBuks.h" />
+    <ClInclude Include="DlgMsg2955.h" />
+    <ClInclude Include="DlgMsg2956.h" />
+    <ClInclude Include="DlgMsg2957_1.h" />
+    <ClInclude Include="DlgMsg2957_2.h" />
+    <ClInclude Include="DlgMsg2957Main.h" />
+    <ClInclude Include="DlgMsg2958.h" />
+    <ClInclude Include="DlgMsg4624_BlTl.h" />
+    <ClInclude Include="DlgMsg4624_Header.h" />
+    <ClInclude Include="DlgMsg4624_KP.h" />
+    <ClInclude Include="DlgMsg4624_LDTL.h" />
+    <ClInclude Include="DlgMsg4624_Main.h" />
+    <ClInclude Include="DlgMsg4624_TLVAG.h" />
+    <ClInclude Include="DlgMsg4624_VagDateInput.h" />
+    <ClInclude Include="DlgMsg4624_ZamenaBlTl.h" />
+    <ClInclude Include="DlgMsg4624_ZamenaKP.h" />
+    <ClInclude Include="DlgMsg4624_ZamenaLDTL.h" />
+    <ClInclude Include="DlgMsg4624Log.h" />
+    <ClInclude Include="DlgNaryadNaVag.h" />
+    <ClInclude Include="DlgObmerKP.h" />
+    <ClInclude Include="DlgOldKPList.h" />
+    <ClInclude Include="DlgPaspKP.h" />
+    <ClInclude Include="DlgPeresKP.h" />
+    <ClInclude Include="DlgPeresTL_AddDTL.h" />
+    <ClInclude Include="DlgPeresTlAddPeres.h" />
+    <ClInclude Include="DlgPeresTlLog.h" />
+    <ClInclude Include="DlgPerestRept.h" />
+    <ClInclude Include="DlgPodkat1069.h" />
+    <ClInclude Include="DlgPodkatTL1520.h" />
+    <ClInclude Include="DlgPPT_BDVagRez.h" />
+    <ClInclude Include="DlgPPT_EditVag.h" />
+    <ClInclude Include="DlgPPT_InpBDVag.h" />
+    <ClInclude Include="DlgPPTSendToRem.h" />
+    <ClInclude Include="DlgPrihKpList.h" />
+    <ClInclude Include="DlgPrihodKP.h" />
+    <ClInclude Include="DlgPrihodOS.h" />
+    <ClInclude Include="DlgPrihodTL.h" />
+    <ClInclude Include="DlgPrihodTL2.h" />
+    <ClInclude Include="DlgPrObtIn.h" />
+    <ClInclude Include="DlgProkatTL1069.h" />
+    <ClInclude Include="DlgRashod.h" />
+    <ClInclude Include="DlgRashodTl.h" />
+    <ClInclude Include="DlgRashodTl_Main.h" />
+    <ClInclude Include="DlgRaspressKP.h" />
+    <ClInclude Include="DlgRaspressovka.h" />
+    <ClInclude Include="DlgRazmGroup.h" />
+    <ClInclude Include="DlgRegisterTL.h" />
+    <ClInclude Include="DlgRemDefektBR.h" />
+    <ClInclude Include="DlgremDefektNB.h" />
+    <ClInclude Include="DlgRemDefektSB.h" />
+    <ClInclude Include="DlgRemKP.h" />
+    <ClInclude Include="DlgRemVag.h" />
+    <ClInclude Include="DlgReq2730ListVag.h" />
+    <ClInclude Include="DlgRptInputZhurnKompl.h" />
+    <ClInclude Include="DlgRptVU36M.h" />
+    <ClInclude Include="DlgRptVU53.h" />
+    <ClInclude Include="DlgRptVU54.h" />
+    <ClInclude Include="DlgRptVU90.h" />
+    <ClInclude Include="DlgSelectOS.h" />
+    <ClInclude Include="DlgSelKPType.h" />
+    <ClInclude Include="DlgSelRP.h" />
+    <ClInclude Include="DlgSelZapress.h" />
+    <ClInclude Include="DlgSetupCommon.h" />
+    <ClInclude Include="DlgSetupTO.h" />
+    <ClInclude Include="DlgSetupUserMenuItems.h" />
+    <ClInclude Include="DlgShowTOVKadr.h" />
+    <ClInclude Include="DlgShowTwin.h" />
+    <ClInclude Include="DlgSotrEd.h" />
+    <ClInclude Include="DlgSprav1.h" />
+    <ClInclude Include="DlgSpravDor.h" />
+    <ClInclude Include="DlgSpravKdr.h" />
+    <ClInclude Include="DlgSpravSmp.h" />
+    <ClInclude Include="DlgSpravTKP.h" />
+    <ClInclude Include="DlgSprPrSobstv.h" />
+    <ClInclude Include="DlgSprPrSobstvAdd.h" />
+    <ClInclude Include="DlgTLFromVag.h" />
+    <ClInclude Include="DlgVagNumTrafaret.h" />
+    <ClInclude Include="DlgVagOn1067.h" />
+    <ClInclude Include="DlgVagOn1067Edit.h" />
+    <ClInclude Include="DlgVvodRP.h" />
+    <ClInclude Include="DlgWheelsToVan.h" />
+    <ClInclude Include="DlgZapressKP.h" />
+    <ClInclude Include="DlgZapressLog.h" />
+    <ClInclude Include="Dspm4624.h" />
+    <ClInclude Include="EmplArray.h" />
+    <ClInclude Include="ErrorDisplay.h" />
+    <ClInclude Include="FastGrid.h" />
+    <ClInclude Include="InputNVagObezl4624.h" />
+    <ClInclude Include="ListEx.h" />
+    <ClInclude Include="m_EdInputVO2.h" />
+    <ClInclude Include="MainForm.h" />
+    <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="MaskEdit.h" />
+    <ClInclude Include="master.h" />
+    <ClInclude Include="Msg4624Dispatcher.h" />
+    <ClInclude Include="Controls\MyLabel.h" />
+    <ClInclude Include="NewMenu.h" />
+    <ClInclude Include="odbcss.h" />
+    <ClInclude Include="PrintableDlg.h" />
+    <ClInclude Include="PrinterSelectDlg.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="StdAfx.h" />
+    <ClInclude Include="TheEdit.h" />
+    <ClInclude Include="ViewPrintPreview.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\11111.BMP" />
+    <None Include="res\11111.jpg" />
+    <None Include="res\ico00001.ico" />
+    <None Include="res\icon1.ico" />
+    <None Include="res\ini.bmp" />
+    <None Include="res\login.bmp" />
+    <None Include="res\login1.bmp" />
+    <None Include="res\login2.bmp" />
+    <None Include="res\master.ico" />
+    <None Include="res\master.rc2" />
+    <None Include="res\masterDoc.ico" />
+    <None Include="res\rt_manif.bin" />
+    <None Include="res\tl.bmp" />
+    <None Include="res\user1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\4624\dsp4624dll\Debug\dsp4624.lib" />
+    <Library Include="ODBC32.LIB" />
+    <Library Include="Telecom\tcp_cli.lib" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="master.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
