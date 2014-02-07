@@ -13,6 +13,8 @@
 *.tlog
 *.log
 *.sbr
+!tnr2612.dll
+!dsp4624.dll
 Debug/*
 html/*
 log/*
