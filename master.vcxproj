@@ -187,6 +187,7 @@
     <ClCompile Include="DlgInput2956Svod.cpp" />
     <ClCompile Include="DlgInput2957.cpp" />
     <ClCompile Include="DlgInput2958.cpp" />
+    <ClCompile Include="DlgInputArchive.cpp" />
     <ClCompile Include="DlgInputRptPostKpXls.cpp" />
     <ClCompile Include="DlgInput_VO7.cpp" />
     <ClCompile Include="DlgInputDate.cpp" />
@@ -353,6 +354,7 @@
     <ClInclude Include="DlgInput2956Svod.h" />
     <ClInclude Include="DlgInput2957.h" />
     <ClInclude Include="DlgInput2958.h" />
+    <ClInclude Include="DlgInputArchive.h" />
     <ClInclude Include="DlgInputRptPostKpXls.h" />
     <ClInclude Include="DlgInput_VO7.h" />
     <ClInclude Include="DlgInputDate.h" />
@@ -476,6 +478,7 @@
     <ClInclude Include="ViewPrintPreview.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
     <None Include="res\11111.BMP" />
     <None Include="res\11111.jpg" />
     <None Include="res\ico00001.ico" />

@@ -174,6 +174,7 @@
 #define IDD_SEL_KP_TYPE                 318
 #define IDD_INPUT_POST_KP_XLS           319
 #define IDD_INPUT_RPT_POST_KP_XLS       319
+#define IDD_BD_TL_PPT_ARCHIVE           320
 #define IDC_EDIT1                       1001
 #define IDC_EDIT2                       1002
 #define IDC_EDIT7                       1003
@@ -1502,7 +1503,7 @@
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_3D_CONTROLS                     1
-#define _APS_NEXT_RESOURCE_VALUE        320
+#define _APS_NEXT_RESOURCE_VALUE        321
 #define _APS_NEXT_COMMAND_VALUE         33010
 #define _APS_NEXT_CONTROL_VALUE         1339
 #define _APS_NEXT_SYMED_VALUE           106

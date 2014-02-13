@@ -126,6 +126,82 @@ BOOL CFastGrid::SortTextItems(int nCol, BOOL bAscending, int low, int high)
     return TRUE;
 }
 
+BOOL CFastGrid::SortIntItems(int nCol, BOOL bAscending, int low, int high)
+{
+//	return TRUE;
+    if( nCol >= ((CHeaderCtrl*)GetDlgItem(0))->GetItemCount() )
+        return FALSE;
+    if( high == -1 ) high = GetItemCount() - 1;
+    int lo = low;
+    int hi = high;
+    unsigned __int64 midItem;
+
+    if( hi <= lo ) return FALSE;
+    midItem = _atoi64( GetItemText( (lo+hi)/2, nCol ) );
+    // loop through the list until indices cross
+    while( lo <= hi )
+    {
+        // rowText will hold all column text for one row
+        CStringArray rowText;
+        // find the first element that is greater than or equal to 
+        // the partition element starting from the left Index.
+        if( bAscending )
+            while( ( lo < high ) && ( _atoi64(GetItemText(lo, nCol)) < midItem ) )
+                ++lo;
+        else
+            while( ( lo < high ) && ( _atoi64(GetItemText(lo, nCol)) > midItem ) )
+                ++lo;
+        // find an element that is smaller than or equal to 
+        // the partition element starting from the right Index.
+        if( bAscending )
+            while( ( hi > low ) && ( _atoi64(GetItemText(hi, nCol)) > midItem ) )
+                --hi;
+        else
+            while( ( hi > low ) && ( _atoi64(GetItemText(hi, nCol)) < midItem ) )
+                --hi;
+        // if the indexes have not crossed, swap
+        // and if the items are not equal
+        if( lo <= hi )
+        {
+            // swap only if the items are not equal
+            if( GetItemText(lo, nCol) != GetItemText(hi, nCol))
+            {
+                // swap the rows
+                LV_ITEM lvitemlo, lvitemhi;
+                int nColCount = ((CHeaderCtrl*)GetDlgItem(0))->GetItemCount();
+                rowText.SetSize( nColCount );
+                int i;
+                for( i=0; i<nColCount; i++)
+                    rowText[i] = GetItemText(lo, i);
+                lvitemlo.mask = LVIF_IMAGE | LVIF_PARAM | LVIF_STATE;
+                lvitemlo.iItem = lo;
+                lvitemlo.iSubItem = 0;
+                lvitemlo.stateMask = LVIS_CUT|LVIS_DROPHILITED|LVIS_FOCUSED|LVIS_SELECTED | LVIS_OVERLAYMASK | LVIS_STATEIMAGEMASK;
+                lvitemhi = lvitemlo;
+                lvitemhi.iItem = hi;
+                GetItem( &lvitemlo );
+                GetItem( &lvitemhi );
+                for( i=0; i<nColCount; i++)
+                    SetItemText(lo, i, GetItemText(hi, i));
+                lvitemhi.iItem = lo;
+                SetItem( &lvitemhi );
+                for( i=0; i<nColCount; i++)
+                    SetItemText(hi, i, rowText[i]);
+                lvitemlo.iItem = hi;
+                SetItem( &lvitemlo );
+            }
+            ++lo;
+            --hi;
+        }
+    }
+    // If the right index has not reached the left side of array
+    // must now sort the left partition.
+    if( low < hi ) SortIntItems( nCol, bAscending , low, hi);
+    // If the left index has not reached the right side of array
+    // must now sort the right partition.
+    if( lo < high ) SortIntItems( nCol, bAscending , lo, high );
+    return TRUE;
+}
 
 BEGIN_MESSAGE_MAP(CFastGrid, CListCtrl)
 	//{{AFX_MSG_MAP(CFastGrid)
@@ -170,9 +246,12 @@ void CFastGrid::OnHeaderClicked(NMHDR *pNMHDR, LRESULT *pResult)
 	*pResult = 0;
 }
 
-void CFastGrid::SortList()
+void CFastGrid::SortList(int iSortAsInt64)
 {
-    SortTextItems( nSortedCol, bSortAscending );
+	if( iSortAsInt64 == 0 )
+		SortTextItems( nSortedCol, bSortAscending );
+	else
+		SortIntItems( nSortedCol, bSortAscending );
 }
 
 

@@ -77,7 +77,7 @@
 #include "DlgRemDefektBR.h"
 #include "DlgRemDefektNB.h"
 #include "DlgRemDefektSB.h"
-
+#include "DlgInputArchive.h"
 #include "dspm4624.h"
 //#include "Msg4624Dispatcher.h"
 //#include "d:\develop\dsp4624\Msg4624Dispatcher.h"
@@ -375,6 +375,7 @@ BEGIN_MESSAGE_MAP(CMasterApp, CWinApp)
 	ON_COMMAND(ID_MNU_SPR_SOBSTV, &CMasterApp::OnMnuSprSobstv)
 	ON_COMMAND(ID_MNU_SPRAV_ZAM_DET, &CMasterApp::OnMnuSpravZamDet)
 	ON_COMMAND(ID_33009, &CMasterApp::OnMnuSprPostKpXls)
+	ON_COMMAND(32863, &CMasterApp::OnMnuArchive)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -1511,7 +1512,8 @@ int CMasterApp::CheckAuth(const char *UserName, const char *Password)
 	DWORD dwDepSelect = 0;
 	sprintf( cQuery, "pTov_EmplAuth '%s', '%s', %d", UserName, Password, g_conf_User_Name_On_Login);
     DBW.ExecSQL( cQuery );
-    if( (g_sqlret = DBW.Fetch()) != SQL_NO_DATA )
+	g_sqlret = DBW.Fetch();
+    if( g_sqlret != SQL_NO_DATA )
     {
         DBW.GetData( 1, SQL_C_ULONG, &g_iDep, 4, &Ind);
         DBW.GetData( 2, SQL_C_ULONG, &g_iFam, 4, &Ind);
@@ -2135,7 +2137,7 @@ int CMasterApp::ProcessMsgAnswer(char * strAnswer)
 		dspSetLogPath = (dspSetLogPath_)GetProcAddress (hm, "dspSetLogPath");
 */
 
-		WriteLog("Dispatch to tnr2612,dll");
+		WriteLog("Dispatch to tnr2612.dll");
 		if ( dspInit )
 		{
 			if( dspStop ) dspStop();
@@ -3666,4 +3668,11 @@ void CMasterApp::OnMnuSprPostKpXls()
 	} else
 		AfxMessageBox("Не найдена ReportPostKP");
 	FreeLibrary (hm);	
+}
+
+
+void CMasterApp::OnMnuArchive()
+{
+	CDlgInputArchive Dlg;
+	Dlg.DoModal();
 }

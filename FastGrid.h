@@ -44,7 +44,8 @@ public:
     BOOL  bBold;
 
     BOOL  SortTextItems(int nCol, BOOL bAscending, int low = 0, int high = -1);
-    void  SortList();
+	BOOL  SortIntItems(int nCol, BOOL bAscending, int low = 0, int high = -1);
+    void  SortList(int iSortAsInt64 = 0);
 
 	COLORREF m_crWindow;
 	COLORREF m_crWindowText;

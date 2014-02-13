@@ -137,6 +137,7 @@ void CDlgVagOn1067::RefreshLists(void)
 	m_List2.SetColumnWidth(1, 65);
 	m_List2.SetColumnWidth(2, 85);
 	m_List2.SetColumnWidth(3, 85);
+	m_List2.SetColumnWidth(4, 40);
 
 }
 

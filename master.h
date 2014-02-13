@@ -164,6 +164,7 @@ public:
 public:
 	afx_msg void OnMnuSpravZamDet();
 	afx_msg void OnMnuSprPostKpXls();
+	afx_msg void OnMnuArchive();
 };
 
 

@@ -13,7 +13,7 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// Russian (Russia) resources
+// Русский (Россия) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
 LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
@@ -2240,7 +2240,7 @@ STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSM
 CAPTION "Выборка из БД тележек"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
-    DEFPUSHBUTTON   "OK",IDOK,301,256,78,14
+    DEFPUSHBUTTON   "OK",IDOK,330,256,78,14
     PUSHBUTTON      "Отмена",IDCANCEL,413,256,78,14
     CONTROL         "",IDC_LIST1,"SysListView32",LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,41,484,207
     GROUPBOX        "",IDC_STATIC,7,7,484,29
@@ -2249,8 +2249,9 @@ BEGIN
     PUSHBUTTON      "Добавление",IDC_BUTTON3,113,16,90,14
     PUSHBUTTON      "Паспорт",IDC_BUTTON4,396,16,90,14
     LTEXT           "Количество записей:",IDC_STATIC,13,253,72,8
-    LTEXT           "0",IDC_STATIC_X,92,253,153,8
+    LTEXT           "0",IDC_STATIC_X,92,253,90,8
     EDITTEXT        IDC_EDIT1,15,16,92,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "Экспорт в EXCEL",IDC_BUTTON5,200,256,78,14
 END
 
 IDD_PODKAT_TL1069 DIALOGEX 0, 0, 410, 266
@@ -3373,29 +3374,29 @@ BEGIN
     GROUPBOX        "",IDC_STATIC,7,0,146,56
 END
 
-IDD_VAGON_NA_KOLEE_1067 DIALOGEX 0, 0, 526, 255
+IDD_VAGON_NA_KOLEE_1067 DIALOGEX 0, 0, 582, 255
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "Вагоны на колее 1067"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
-    PUSHBUTTON      "Выход",IDCANCEL,446,235,75,14
-    PUSHBUTTON      ">>",IDC_BUTTON1,252,41,20,74
-    PUSHBUTTON      "<<",IDC_BUTTON2,252,139,20,74
-    GROUPBOX        "Трафареченные",IDC_STATIC,1,2,249,226,BS_CENTER
-    GROUPBOX        "Обезличенные",IDC_STATIC,275,2,249,226,BS_CENTER
+    PUSHBUTTON      "Выход",IDCANCEL,504,235,75,14
+    PUSHBUTTON      ">>",IDC_BUTTON1,281,42,20,74
+    PUSHBUTTON      "<<",IDC_BUTTON2,281,140,20,74
+    GROUPBOX        "Трафареченные",IDC_STATIC,1,2,278,230,BS_CENTER
+    GROUPBOX        "Обезличенные",IDC_STATIC,304,3,277,229,BS_CENTER
     LTEXT           "Поиск:",IDC_STATIC,6,16,24,8
     EDITTEXT        IDC_EDIT1,33,13,54,14,ES_AUTOHSCROLL
-    LTEXT           "Поиск:",IDC_STATIC,283,16,24,8
-    EDITTEXT        IDC_EDIT2,310,13,54,14,ES_AUTOHSCROLL
+    LTEXT           "Поиск:",IDC_STATIC,310,16,24,8
+    EDITTEXT        IDC_EDIT2,337,13,54,14,ES_AUTOHSCROLL
     LTEXT           "Количество вагонов:",IDC_STATIC,7,216,73,8
-    LTEXT           "Количество вагонов:",IDC_STATIC,281,216,73,8
-    PUSHBUTTON      "Удалить вагон",IDC_BUTTON3,264,235,93,14
-    GROUPBOX        "",IDC_STATIC,1,227,523,25
-    CONTROL         "",IDC_LIST1,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,4,31,243,183
-    CONTROL         "",IDC_LIST2,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,278,31,243,183
+    LTEXT           "Количество вагонов:",IDC_STATIC,306,216,73,8
+    PUSHBUTTON      "Удалить вагон",IDC_BUTTON3,293,235,93,14
+    GROUPBOX        "",IDC_STATIC,2,227,579,25
+    CONTROL         "",IDC_LIST1,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,4,31,273,183
+    CONTROL         "",IDC_LIST2,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,306,31,273,183
     LTEXT           "0",IDC_STATIC1,84,216,84,8
-    LTEXT           "0",IDC_STATIC2,356,216,76,8
-    PUSHBUTTON      "Корректировать вагон",IDC_BUTTON4,168,235,93,14
+    LTEXT           "0",IDC_STATIC2,381,216,76,8
+    PUSHBUTTON      "Корректировать вагон",IDC_BUTTON4,197,235,93,14
     PUSHBUTTON      "Обновить всё",IDC_BUTTON5,4,235,75,14
     PUSHBUTTON      "Справка по аренде",IDC_BUTTON6,159,11,88,14
 END
@@ -5645,6 +5646,26 @@ BEGIN
     LTEXT           "Отчетный месяц:",IDC_STATIC,19,9,60,8
 END
 
+IDD_BD_TL_PPT_ARCHIVE DIALOGEX 0, 0, 258, 100
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Архив"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "Инвентарный номер тележки",IDC_CHECK41,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,8,14,115,10
+    EDITTEXT        IDC_EDIT71,197,12,50,14,ES_AUTOHSCROLL | WS_DISABLED
+    CONTROL         "Номер надрессорной балки",IDC_CHECK3,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,8,30,108,10
+    EDITTEXT        IDC_EDIT7,197,28,50,14,ES_AUTOHSCROLL | WS_DISABLED
+    CONTROL         "Номер боковой рамы",IDC_CHECK2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,8,46,135,10
+    EDITTEXT        IDC_EDIT3,197,43,50,14,ES_AUTOHSCROLL | WS_DISABLED
+    CONTROL         "Дата отправки в ремонт:",IDC_CHECK42,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,8,61,111,10
+    EDITTEXT        IDC_EDIT93,125,58,50,14,ES_AUTOHSCROLL | ES_NUMBER | WS_DISABLED
+    EDITTEXT        IDC_EDIT94,197,58,50,14,ES_AUTOHSCROLL | ES_NUMBER | WS_DISABLED
+    DEFPUSHBUTTON   "ОК",IDOK,143,82,50,14
+    PUSHBUTTON      "Отмена",IDCANCEL,197,82,50,14
+    LTEXT           "до:",IDC_STATIC,181,61,12,8
+    GROUPBOX        "",IDC_STATIC,1,4,254,74
+END
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -5892,7 +5913,7 @@ BEGIN
     IDD_MAIN_WINDOW, DIALOG
     BEGIN
         LEFTMARGIN, 2
-        VERTGUIDE, 438
+        VERTGUIDE, 444
         TOPMARGIN, 7
         BOTTOMMARGIN, 291
     END
@@ -6295,7 +6316,7 @@ BEGIN
     IDD_VAGON_NA_KOLEE_1067, DIALOG
     BEGIN
         LEFTMARGIN, 1
-        RIGHTMARGIN, 524
+        RIGHTMARGIN, 580
         TOPMARGIN, 2
         BOTTOMMARGIN, 252
     END
@@ -6776,6 +6797,14 @@ BEGIN
         TOPMARGIN, 7
         BOTTOMMARGIN, 39
     END
+
+    IDD_BD_TL_PPT_ARCHIVE, DIALOG
+    BEGIN
+        LEFTMARGIN, 1
+        RIGHTMARGIN, 255
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 96
+    END
 END
 #endif    // APSTUDIO_INVOKED
 
@@ -6977,7 +7006,7 @@ BEGIN
         MENUITEM "Вагоны на колее 1067",        32892
         MENUITEM "Отправка в ремонт",           32881
         MENUITEM "Сообщение 4624",              32894
-        MENUITEM "Архив",                       32863, INACTIVE
+        MENUITEM "Архив",                       32863
         POPUP "Отчетность"
         BEGIN
             MENUITEM "Наличие тележек 1067",        32882
@@ -7265,12 +7294,12 @@ BEGIN
     ID_MENUITEM32776        "ID_MENUITEM32776"
 END
 
-#endif    // Russian (Russia) resources
+#endif    // Русский (Россия) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
 /////////////////////////////////////////////////////////////////////////////
-// English (United States) resources
+// Английский (США) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
 LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
@@ -7439,7 +7468,7 @@ BEGIN
     ID_MENUITEM32792        "Eciaiaiea ia?iey"
 END
 
-#endif    // English (United States) resources
+#endif    // Английский (США) resources
 /////////////////////////////////////////////////////////////////////////////
 
 

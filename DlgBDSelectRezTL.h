@@ -24,6 +24,7 @@ protected:
 
 	DECLARE_MESSAGE_MAP()
 public:
+	int	iNewProc;
 	virtual BOOL OnInitDialog();
 	CFastGrid m_List;
 	void RefreshList(void);
@@ -36,4 +37,7 @@ public:
 	CMaskEdit m_Edit;
 	afx_msg void OnBnClickedCancel();
 	afx_msg void OnBnClickedOk();
+	afx_msg void OnHdnItemclickList1(NMHDR *pNMHDR, LRESULT *pResult);
+	CButton m_BtnAdd;
+	afx_msg void OnBnClickedButtonExportExcel();
 };
