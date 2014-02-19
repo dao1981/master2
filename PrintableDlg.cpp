@@ -219,13 +219,14 @@ void CPrintableDlg::OnClose()
 void CPrintableDlg::OnButtonSaveToFile() 
 {
     DWORD dwCount = m_List.GetItemCount();
-    CString strFileName;
+    CString strFileName, strDirName;
     CString strLine;
     CFileDialog FileDlg(false, "txt", NULL, OFN_OVERWRITEPROMPT, "Текстовый файл (*.txt)|*.txt", NULL);
     if( FileDlg.DoModal() == IDCANCEL ) return;
     strFileName = FileDlg.GetFileName();
+	strDirName = FileDlg.GetFolderPath();
 
-    FILE *f = fopen(strFileName, "wt");
+    FILE *f = fopen(strDirName + "\\" + strFileName, "wt");
     if( !f )
     {
         MessageBox("Ошибка открытия файла!",
