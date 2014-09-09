@@ -415,6 +415,11 @@ VOID CALLBACK MyTimerProc(
 
 int CheckDirExists(CString strPath)
 {
+	DWORD dwAttrib = GetFileAttributes(strPath);
+
+	return (dwAttrib != INVALID_FILE_ATTRIBUTES && 
+           (dwAttrib & FILE_ATTRIBUTE_DIRECTORY));
+	/*
 	FILE *f = fopen(strPath + "\\1.vvv", "w");
 	if( !f )
 	{		
@@ -425,6 +430,7 @@ int CheckDirExists(CString strPath)
 		DeleteFile(strPath + "\\1.vvv");
 	}
 	return 0;
+	*/
 }
 
 int _stdcall TeleGetMessage( char *p ,long size ,CString src ,CString dst )
@@ -1288,24 +1294,23 @@ BOOL CMasterApp::LoadSQLGlobalConfig()
 		DBW.GetGlobalOption("STAND_ALONE", &g_iStandAlone);
 	}
 
-		if( CheckDirExists(g_conf_strMessagePath) == -1 )
+	if( CheckDirExists(g_conf_strMessagePath) == -1 )
 	{
-/*		AfxMessageBox("Путь для отправки сообщений сообщений указан неверно!\n");
-		return FALSE;*/
-		g_iNeedSetupPath = 1;
+		AfxMessageBox("Путь для отправки сообщений сообщений указан неверно!\n(MsgPath)");
+		return FALSE;
+//		g_iNeedSetupPath = 1;
 	}
-
 	if( CheckDirExists(g_conf_strMessageReturnPath) == -1 )
 	{
-/*		AfxMessageBox("Путь для входящих сообщений указан неверно!\n(MsgReturnPath)");
-		return FALSE;*/
-		g_iNeedSetupPath = 1;
+		AfxMessageBox("Путь для входящих сообщений указан неверно!\n(MsgReturnPath)");
+		return FALSE;
+//		g_iNeedSetupPath = 1;
 	}
 	if( CheckDirExists(g_conf_strMessageUnprocessedPath) == -1 )
 	{
-/*		AfxMessageBox("Путь для необработанных сообщений сообщений указан неверно!\n(BadMsgPath)");
-		return FALSE;*/
-		g_iNeedSetupPath = 1;
+		AfxMessageBox("Путь для необработанных сообщений сообщений указан неверно!\n(BadMsgPath)");
+		return FALSE;
+//		g_iNeedSetupPath = 1;
 	}
 	DBW.GetGlobalOption("CLIENT_VERSION", &g_iSQLClientVersion);
 	DBW.GetGlobalOption("ROAD_SERVER", &g_strRoadServer);
